@@ -11,24 +11,50 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mwp' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'mwp' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'mwp' ), 'mwp', '<a href="https://nikibrown.com">Niki Brown</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		<footer>
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-3">
+						<p>Metalenz, Inc.<br />
+							Cambridge, MA  02129
+							</p>
+					</div>
+					<div class="col-lg-3">
+						<p>+1-978-123-1234<br />
+							<a href="mailto:info@metalenz.com">info@metalenz.com</a>
+						</p>
+					</div>
+					<div class="col-lg-6">
+						<ul class="list-inline social-nav">
+							<li class="list-inline-item">
+								<a href="">
+									<i class="fab fa-facebook-square fa-2x"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="">
+									<i class="fab fa-twitter-square fa-2x"></i>
+								</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="">
+									<i class="fab fa-linkedin fa-2x"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-12">
+						<p class="copyright">Copyright © 2020 Metalenz, Inc. All Rights Reserved.  |  
+							<a href="">Privacy Policy</a></p>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-<?php wp_footer(); ?>
+		<?php wp_footer(); ?>
 
-</body>
+	</body>
 </html>
+
+
+
