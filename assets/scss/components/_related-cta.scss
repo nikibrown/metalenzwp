@@ -1,0 +1,58 @@
+.related-cta {
+
+    h2 {
+        font-family: $montserrat;
+        font-size: 32px;
+        font-weight: 300;
+    }
+
+    .related-cta-top {
+        padding: 30px 0 15px;
+        @include media-breakpoint-up(lg) {
+            padding: 100px 0 15px;
+        }
+    }
+    .related-cta-middle {
+        background-color: $brand-purple;
+    
+        .photo-inner {
+            background-position: top center;
+            background-size: cover;
+            min-height: 300px;
+            @include media-breakpoint-up(lg) {
+                min-height: 220px;
+            }
+            position: relative;
+
+            .btn {
+                bottom: 20px;
+                left: 20px;
+                position: absolute;
+                @include media-breakpoint-up(lg) {
+                    display: none;    
+                }
+            }
+            
+        }
+    }
+
+    .related-cta-bottom {
+        padding: 25px 0;
+        @include media-breakpoint-up(lg) {
+            padding: 25px 0 100px 0;
+        }
+
+        .btn {
+            display: none;
+            text-align: left;
+            @include media-breakpoint-up(lg) {
+                display: block;
+                margin: 0 auto;
+                max-width: 80%;
+            }
+        }
+    
+    }
+}
+
+

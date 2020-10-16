@@ -1,0 +1,111 @@
+ <footer>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-3">
+				<p>Metalenz, Inc.<br />
+					Cambridge, MA  02129
+					</p>
+			</div>
+			<div class="col-lg-3">
+				<p>+1-978-123-1234<br />
+					<a href="mailto:info@metalenz.com">info@metalenz.com</a>
+				</p>
+			</div>
+			<div class="col-lg-6">
+				<ul class="list-inline social-nav">
+					<li class="list-inline-item">
+						<a href="">
+							<i class="fab fa-facebook-square fa-2x"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="">
+							<i class="fab fa-twitter-square fa-2x"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="">
+							<i class="fab fa-linkedin fa-2x"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-12">
+				<p class="copyright">Copyright © 2020 Metalenz, Inc. All Rights Reserved.  |  
+					<a href="">Privacy Policy</a></p>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script>
+	const $dropdown = $(".dropdown");
+const $dropdownToggle = $(".dropdown-toggle");
+const $dropdownMenu = $(".dropdown-menu");
+const showClass = "show";
+
+$(window).on("load resize", function() {
+  if (this.matchMedia("(min-width: 992px)").matches) {
+    $dropdown.hover(
+      function() {
+        const $this = $(this);
+        $this.addClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "true");
+        $this.find($dropdownMenu).addClass(showClass);
+      },
+      function() {
+        const $this = $(this);
+        $this.removeClass(showClass);
+        $this.find($dropdownToggle).attr("aria-expanded", "false");
+        $this.find($dropdownMenu).removeClass(showClass);
+      }
+    );
+  } else {
+    $dropdown.off("mouseenter mouseleave");
+  }
+});
+
+// search toggle
+
+const $searchLabel = $(".search-label");
+const $headerTopSearch = $(".header-top-search");
+
+$searchLabel.on("click", function() {
+	$headerTopSearch.toggleClass("show");
+});
+
+
+// $(document).on("click", function(event){
+// 	const $isClickInside = $searchLabel.contains(event.target);
+// 	if (!$isClickInside) {
+// 		// outside click / only toggle if already shown
+// 		if ($headerTopSearch.hasClass("show")) {
+// 			$headerTopSearch.toggleClass("show");
+// 		}
+		
+// 	} else {
+// 		$headerTopSearch.toggleClass("show");
+// 	}
+// });
+
+
+// const headerTopSearch = document.getElementById("header-top-search");
+
+// //I'm using "click" but it works with any event
+// document.addEventListener('click', function(event) {
+//   var isClickInside = headerTopSearch.contains(event.target);
+
+//   if (!isClickInside) {
+//     //the click was outside the specifiedElement, do something
+// 	headerTopSearch.classList.add("show");
+//   }
+// });
+ 
+
+</script>
+
+</body>
+</html>

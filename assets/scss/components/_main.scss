@@ -1,0 +1,16 @@
+main {
+    background: $brand-pink;
+    background: $brand-gradient-pink;
+
+    aside {
+        background-color: $brand-white;
+        min-height: 235px;
+        padding: 25px;
+    }
+
+    article {
+        background-color: $brand-white;
+        padding: 50px;
+    }
+}
+

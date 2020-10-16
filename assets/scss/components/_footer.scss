@@ -1,0 +1,50 @@
+footer {
+    background-color: $brand-dark;
+    color: $brand-white;
+    padding: 30px 0 50px 0;
+
+    a {
+        color: $brand-white;
+        &:hover {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+    }
+
+    .social-nav {
+        @include media-breakpoint-up(lg) {
+            text-align: right;
+        }
+
+        .fab {
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            color: #414042;
+            position: relative;
+            &:hover {
+                color: lighten(#414042, 10%);
+            }
+
+            &:after {
+                content: ".";
+                color: $brand-white;
+                background-color: $brand-white;
+                width: 24px;
+                height: 23px;
+                position: absolute;
+                left: 1;
+                top: -7px;
+                z-index: 0;
+            }
+        }
+    }  
+
+    .copyright {
+        margin-top: 60px;
+    }
+}
+
+

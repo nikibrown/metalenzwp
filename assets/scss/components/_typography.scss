@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+$opensans: 'Open Sans', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
+
+html,
+body {
+	font-family: $opensans;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.intro {
+	color: $brand-light-purple;
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 1.2;
+	margin-bottom: 50px;
+	position: relative;
+
+	&:after {
+		bottom: -64px;
+		color: $brand-pink;
+		content: "\2026";
+		font-family: $montserrat;
+		font-size: 130px;
+		left: -7px;
+		position: absolute;
+
+
+	}
+}
+
+main a {
+	color: $brand-blue;
+	text-decoration: none;
+	&:hover {
+		color: darken($brand-blue, 10%);
+		text-decoration: none;
+	}
+}
+
+h1 {
+	font-family: $montserrat;
+	font-size: 60px;
+	font-weight: 300;
+	line-height: .8;
+}
+
+h2 {
+	color: $brand-light-purple;
+	font-family: $opensans;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+
+h3 {
+	color: $brand-light-purple;
+	font-family: $opensans;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.2;
+}
+
+main ul {
+	padding-left: 18px;
+}
+
+
+// h1,
+// h2,
+// h3,
+// h4 {
+	
+// }
+
+// h1,
+// .h1 {
+
+// }
+
+// h2,
+// .h2 {
+
+// }
+
+// h3,
+// .h3 {
+	
+// }
+
+// h4,
+// .h4 {
+	
+// }
+
+// p {
+// 	font-size: 16px;
+// 	@include media-breakpoint-up(sm) {
+// 		font-size: 20px;
+// 	}
+// 	@include media-breakpoint-up(lg) {
+// 		font-size: 28px;
+// 	}
+// }
+
+// .small {
+// 	font-size: 16px;
+// 	@include media-breakpoint-up(lg) {
+// 		font-size: 20px;
+// 	}
+// }
+
+// blockquote p {
+// 	color: $pink;
+// 	font-size: 25px;
+// 	@include media-breakpoint-up(sm) {
+// 		font-size: 32px;
+// 	}
+// 	@include media-breakpoint-up(lg) {
+// 		font-size: 50px;
+// 	}
+// 	line-height: 1;
+// 	margin-top: 0;
+// 	margin-bottom: 1rem;
+// 	position: relative;
+// 	text-align: right;
+
+// 	&:before {
+// 		content: "\201C";
+// 	}
+
+// 	&:after {
+// 		content: "\201D";
+// 	}
+// }
+

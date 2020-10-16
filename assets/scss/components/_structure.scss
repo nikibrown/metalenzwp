@@ -1,0 +1,26 @@
+@include media-breakpoint-up(xl) {
+	.container,
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl {
+		max-width: 1180px!important;
+	}
+}
+
+main article {
+	position: relative;
+	
+	&:before {
+		background-image: url("../img/logo-bg.svg");
+		background-size: 511px 511px;
+		content: "";
+		height: 511px;
+		left: -321px;
+		position: absolute;
+		top: 164px;
+		width: 511px;
+		z-index: 0;
+	}
+}
+

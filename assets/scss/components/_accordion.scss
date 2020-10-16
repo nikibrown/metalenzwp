@@ -1,0 +1,106 @@
+.accordion {
+    margin: 30px 0;
+
+    .accordion-button {
+        .fas {
+            display: inline-block;
+            color: $brand-light-purple;
+            margin-right: 15px;
+        }
+
+        background-color: $brand-light-gray1;
+        color: $brand-blue;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 10px 20px;
+        margin: 0 0 10px 0;
+
+        &[aria-expanded="true"] {
+            .fas {
+                transform: rotate(90deg);
+            }
+        }
+
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .accordion-content {
+        padding: 20px 35px 20px 47px;
+    }
+}
+
+
+.accordion-large {
+
+    // override gutter width to match design
+    .row {
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+    
+    .col-lg-6 {
+        padding-right: 5px!important;
+        padding-left: 5px!important;
+    }
+
+    li {
+        margin-bottom: 40px;
+    }
+
+    .accordion-button {
+        .photo {
+            background-size: cover;
+            min-height: 200px;
+            @include media-breakpoint-up(sm) {
+                min-height: 250px;
+            }
+            @include media-breakpoint-up(lg) {
+                min-height: 200px;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &[aria-expanded="true"] {
+            .fas {
+                transform: rotate(90deg);
+            }
+        }
+       
+    }
+
+    .accordion-title {
+        background-color: $brand-purple;
+        color: $brand-white;
+        padding: 20px;
+        position: relative;
+        min-height: 150px;
+        @include media-breakpoint-up(lg) {
+            min-height: 200px;
+        }
+
+     
+        h2 {
+            color: $brand-white;
+        }
+
+        .fas {
+            bottom: 20px;
+            left: 20px;
+            position: absolute;
+        }
+
+    }
+
+    .accordion-content {
+        background-color: $brand-light-gray1;
+        margin-top: 10px;
+        padding: 25px 25px 10px 25px;
+    }
+
+}

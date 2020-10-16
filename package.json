@@ -1,0 +1,28 @@
+{
+	"name": "metalenz",
+	"version": "1.0.0",
+	"description": "Metalenz WordPress site",
+	"main": "index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nikibrown/metalenz.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nikibrown/metalenz/issues"
+	},
+	"homepage": "https://github.com/nikibrown/metalenz",
+	"devDependencies": {
+		"bootstrap": "^4.5.0",
+		"browser-sync": "^2.26.7",
+		"gulp": "^4.0.2",
+		"gulp-file-include": "^2.2.2",
+		"gulp-postcss": "^8.0.0",
+		"gulp-sass": "^4.0.2",
+		"node-sass": "^4.13.0"
+	}
+}
