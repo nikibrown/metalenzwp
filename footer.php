@@ -16,32 +16,26 @@
 				<div class="row align-items-center">
 					<div class="col-lg-3">
 						<p>Metalenz, Inc.<br />
-							Cambridge, MA  02129
-							</p>
+							<?php the_field('footer_address', 'option'); ?>
+						</p>
 					</div>
 					<div class="col-lg-3">
-						<p>+1-978-123-1234<br />
-							<a href="mailto:info@metalenz.com">info@metalenz.com</a>
+						<p><a href="tel://<?php the_field('footer_phone', 'option'); ?>"><?php the_field('footer_phone', 'option'); ?></a><br />
+							<a href="mailto<?php the_field('footer_email', 'option'); ?>"><?php the_field('footer_email', 'option'); ?></a>
 						</p>
 					</div>
 					<div class="col-lg-6">
-						<ul class="list-inline social-nav">
-							<li class="list-inline-item">
-								<a href="">
-									<i class="fab fa-facebook-square fa-2x"></i>
-								</a>
-							</li>
-							<li class="list-inline-item">
-								<a href="">
-									<i class="fab fa-twitter-square fa-2x"></i>
-								</a>
-							</li>
-							<li class="list-inline-item">
-								<a href="">
-									<i class="fab fa-linkedin fa-2x"></i>
-								</a>
-							</li>
-						</ul>
+						<?php if( have_rows('footer_social_links', 'option') ): ?>
+							<ul class="list-inline social-nav">
+								<?php while( have_rows('footer_social_links', 'option') ): the_row(); ?>
+									<li class="list-inline-item">
+										<a href="<?php the_sub_field('footer_social_link', 'option'); ?>">
+											<i class="fab <?php the_sub_field('footer_social_icon', 'option'); ?> fa-2x"></i>
+										</a>
+									</li>
+								<?php endwhile; ?>
+							</ul>
+						<?php endif; ?>
 					</div>
 					<div class="col-lg-12">
 						<p class="copyright">Copyright © 2020 Metalenz, Inc. All Rights Reserved.  |  
