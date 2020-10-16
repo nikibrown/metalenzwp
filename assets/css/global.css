@@ -7429,7 +7429,7 @@ footer {
       width: 24px;
       height: 23px;
       position: absolute;
-      left: 1;
+      left: 1px;
       top: -7px;
       z-index: 0; }
   footer .copyright {
