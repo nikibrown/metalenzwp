@@ -37,13 +37,12 @@
 				<div class="col-lg-8 sub-nav">
 					<ul class="list-inline">
 						<li class="list-inline-item">
-							<form class="header-search-form form-inline my-2 my-lg-0">
-
-								<input class="header-top-search form-control mr-sm-2" type="Search" placeholder="Search" aria-label="Search">
+							<form role="search" action="<?php echo home_url( '/' ); ?>" method="get" class="header-search-form form-inline my-2 my-lg-0">
+								<input class="header-top-search form-control mr-sm-2" type="Search" value="<?php the_search_query(); ?>" aria-label="Search" name="s" id="s">
 								<span id="search-label" class="search-label d-inline-block">Search <i class="fas fa-search"></i></span>
 							</form>
 						</li>
-						<li class="list-inline-item \"><a href="">Contact <i class="fas fa-at"></i></a></li>
+						<li class="list-inline-item"><a href="mailto:<?php the_field('footer_email', 'option'); ?>">Contact <i class="fas fa-at"></i></a></li>
 					</ul>
 
 					<p class="tagline"><?php the_field('header_tagline', 'option'); ?></p>

@@ -21,7 +21,7 @@
 					</div>
 					<div class="col-lg-3">
 						<p><a href="tel://<?php the_field('footer_phone', 'option'); ?>"><?php the_field('footer_phone', 'option'); ?></a><br />
-							<a href="mailto<?php the_field('footer_email', 'option'); ?>"><?php the_field('footer_email', 'option'); ?></a>
+							<a href="mailto:<?php the_field('footer_email', 'option'); ?>"><?php the_field('footer_email', 'option'); ?></a>
 						</p>
 					</div>
 					<div class="col-lg-6">
