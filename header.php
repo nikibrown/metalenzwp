@@ -46,7 +46,7 @@
 						<li class="list-inline-item \"><a href="">Contact <i class="fas fa-at"></i></a></li>
 					</ul>
 
-					<p class="tagline">Transforming light via breakthrough flat-lens technology</p>
+					<p class="tagline"><?php the_field('header_tagline', 'option'); ?></p>
 				</div>
 
 			</div>
