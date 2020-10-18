@@ -7496,6 +7496,7 @@ main {
 .breadcrumb {
   background: none;
   color: #fff;
+  font-size: 14px;
   padding-left: 0; }
   .breadcrumb a {
     color: #fff;

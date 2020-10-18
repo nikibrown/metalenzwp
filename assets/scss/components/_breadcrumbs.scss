@@ -1,26 +1,27 @@
 .breadcrumb {
-    background: none;
-    color: $brand-white;
-    padding-left: 0;
-    a {
-        color: $brand-white;
-        text-decoration: none;
-        &:hover {
-            color: rgba(255,255,255,.8);
-        }
-    }
+	background: none;
+	color: $brand-white;
+	font-size: 14px;
+	padding-left: 0;
+	a {
+		color: $brand-white;
+		text-decoration: none;
+		&:hover {
+			color: rgba(255, 255, 255, 0.8);
+		}
+	}
 }
 
 .breadcrumb-item {
-    color: $brand-white;
-    font-size: 14px;
-    &.active {
-        color: $brand-white;
-    }
+	color: $brand-white;
+	font-size: 14px;
+	&.active {
+		color: $brand-white;
+	}
 
-    &+.breadcrumb-item {
-        &:before {
-            color: $brand-white;
-        }
-    }
+	& + .breadcrumb-item {
+		&:before {
+			color: $brand-white;
+		}
+	}
 }
