@@ -34,12 +34,7 @@ get_header();
 				<div class="row">
 					<div class="col-lg-12">
 						<nav aria-label="breadcrumb">
-						<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-							<!-- <ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
-								<li class="breadcrumb-item"><a href="#">Library</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Data</li>
-							</ol> -->
+							<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
 						</nav>
 					</div>
 				</div>
@@ -49,33 +44,17 @@ get_header();
 						<aside class="sidebar-nav">
 							<nav>
 							<?php
-								$children = wp_list_pages( 'title_li=&child_of='.$post->ID.'&echo=0' );
-								if ( $children) : ?>
+								global $post;
+								$parents = get_post_ancestors( $post->ID );
+								/* Get the ID of the 'top most' Page if not return current page ID */
+								$id = ($parents) ? $parents[count($parents)-1]: $post->ID;
+
+								$childPages = wp_list_pages( 'title_li=&child_of='.$id.'&echo=0' );
+								if ( $childPages) : ?>
 									<ul class="list-unstyled">
-										<?php echo $children; ?>
+										<?php echo $childPages; ?>
 									</ul>
 								<?php endif; ?>
-								<!-- <ul class="list-unstyled">
-									<li>
-										<a href="">Team</a>
-									</li>
-									<li class="has-sub-menu">
-										<a href="">Careers</a>
-										<ul class="list-unstyled sub-menu">
-											<li>
-												<a href="">Sample Secondary Menu Item
-												</a>
-											</li>
-											<li>
-												<a href="">Another Secondary Item
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a href="">Contact Us</a>
-									</li>
-								</ul> -->
 							</nav>
 							
 						</aside>

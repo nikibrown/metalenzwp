@@ -358,7 +358,8 @@ mark,
   padding: 0.2em;
   background-color: #fcf8e3; }
 
-.list-unstyled {
+.list-unstyled, .sidebar-nav ul li ul.sub-menu,
+.sidebar-nav ul li .children {
   padding-left: 0;
   list-style: none; }
 
@@ -7518,16 +7519,19 @@ main {
     display: block;
     font-weight: 700;
     padding: 10px 0; }
-  .sidebar-nav ul li.has-sub-menu a {
+  .sidebar-nav ul li.has-sub-menu a, .sidebar-nav ul li.page_item_has_children a {
     color: #86509F; }
-    .sidebar-nav ul li.has-sub-menu a:hover {
+    .sidebar-nav ul li.has-sub-menu a:hover, .sidebar-nav ul li.page_item_has_children a:hover {
       color: #693f7d; }
-  .sidebar-nav ul li ul.sub-menu {
+  .sidebar-nav ul li ul.sub-menu,
+  .sidebar-nav ul li .children {
     margin-bottom: 10px; }
-    .sidebar-nav ul li ul.sub-menu li {
+    .sidebar-nav ul li ul.sub-menu li,
+    .sidebar-nav ul li .children li {
       border-bottom: none;
       padding-left: 10px; }
-      .sidebar-nav ul li ul.sub-menu li a {
+      .sidebar-nav ul li ul.sub-menu li a,
+      .sidebar-nav ul li .children li a {
         border-bottom: none;
         color: #58595B;
         font-style: italic;

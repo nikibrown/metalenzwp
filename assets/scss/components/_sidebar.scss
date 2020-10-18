@@ -1,40 +1,38 @@
 .sidebar-nav {
-    
+	ul {
+		li {
+			border-bottom: 1px dashed $brand-light-gray2;
+			a {
+				display: block;
+				font-weight: 700;
+				padding: 10px 0;
+			}
+			&.has-sub-menu,
+			&.page_item_has_children {
+				a {
+					color: $brand-light-purple;
+					&:hover {
+						color: darken($brand-light-purple, 10%);
+					}
+				}
+			}
 
-    ul {
-        li {
-            border-bottom: 1px dashed $brand-light-gray2;
-            a {
-                display: block;
-                font-weight: 700;
-                padding: 10px 0;
-            }
-            &.has-sub-menu {
-                a {
-                    color: $brand-light-purple;
-                    &:hover {
-                        color: darken($brand-light-purple, 10%);
-                    }
-                }
-            }
-
-            ul.sub-menu {
-                margin-bottom: 10px;
-                li {
-                    border-bottom: none;
-                    padding-left: 10px;
-                    a {
-                        border-bottom: none;
-                        color: $brand-dark-gray;
-                        font-style: italic;
-                        font-weight: 500;
-                        padding: 7px 0;
-                    }
-                }
-                
-            }
-        }
-        
-    }
+			ul.sub-menu,
+			.children {
+				@extend .list-unstyled;
+				margin-bottom: 10px;
+				li {
+					border-bottom: none;
+					padding-left: 10px;
+					a {
+						border-bottom: none;
+						color: $brand-dark-gray;
+						font-style: italic;
+						font-weight: 500;
+						padding: 7px 0;
+					}
+				}
+			}
+		}
+	}
 }
-
