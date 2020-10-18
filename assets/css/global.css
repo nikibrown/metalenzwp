@@ -7492,7 +7492,7 @@ main {
     padding: 25px; }
   main article {
     background-color: #fff;
-    padding: 50px; }
+    padding: 50px 50px 125px 50px; }
 
 .breadcrumb {
   background: none;
