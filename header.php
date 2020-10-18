@@ -59,7 +59,20 @@
 				</button>
 			  
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				  <ul class="navbar-nav mr-auto">
+
+				<?php $defaults = array(
+					'menu' => 'Main Nav',
+					'container'       => '',
+					'fallback_cb'     => 'wp_page_menu',
+					'items_wrap'      => '<ul class="navbar-nav mr-auto">%3$s</ul>',
+					'depth'           => 2				
+				);
+				?>
+
+				<?php wp_nav_menu( $defaults ); ?>
+
+					
+				  <!-- <ul class="navbar-nav mr-auto">
 					<li class="nav-item">
 					  <a class="nav-link" href="#">About Us</a>
 					</li>
@@ -85,7 +98,7 @@
 					  <li class="nav-item">
 						<a class="nav-link" href="#">Publications</a>
 					  </li>
-				  </ul>
+				  </ul> -->
 				</div>
 			  </nav>
 		</div>

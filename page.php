@@ -15,24 +15,90 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<section class="page-header-img" style="background-image: url('<?php the_field("page_header_image"); ?>);">
+		<div class="container">
+			<div class="row align-items-end">
+				<div class="col-lg-12">
+					<h1><?php the_title(); ?></h1>
+				</div>	
+			</div>
+			
+		</div>
+	</section>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	
 
-			get_template_part( 'template-parts/content', 'page' );
+	<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item"><a href="#">Library</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Data</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+				<div class="row no-gutters">
+					<div class="col-lg-3 d-none d-lg-block">
+						<aside class="sidebar-nav">
+							<nav>
+							<?php
+								$children = wp_list_pages( 'title_li=&child_of='.$post->ID.'&echo=0' );
+								if ( $children) : ?>
+									<ul class="list-unstyled">
+										<?php echo $children; ?>
+									</ul>
+								<?php endif; ?>
+								<!-- <ul class="list-unstyled">
+									<li>
+										<a href="">Team</a>
+									</li>
+									<li class="has-sub-menu">
+										<a href="">Careers</a>
+										<ul class="list-unstyled sub-menu">
+											<li>
+												<a href="">Sample Secondary Menu Item
+												</a>
+											</li>
+											<li>
+												<a href="">Another Secondary Item
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="">Contact Us</a>
+									</li>
+								</ul> -->
+							</nav>
+							
+						</aside>
+					</div>
+					<div class="col-lg-9">
+						<article>
+							<?php if( get_field('page_intro') ): ?>
+								<p class="intro"><?php the_field("page_intro"); ?></p>
+							<?php endif; ?>
 
-		endwhile; // End of the loop.
-		?>
+							<?php the_content(); ?>
 
-	</main><!-- #main -->
+								
+						</article>
+						
+	
+					</div>
+				</div>
+						
+						
+				
+			</div>
+		</main>
 
-<?php
-get_sidebar();
-get_footer();
+<?php endwhile; endif; ?>
+
+<?php get_footer(); ?>
