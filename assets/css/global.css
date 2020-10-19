@@ -7666,7 +7666,7 @@ main article {
 .page-subheader.page-subheader-blue {
   background: linear-gradient(180deg, #4e9fd7 0%, #0071bc 100%); }
 
-.page-subheader .row {
+.page-subheader .row.row-min-height {
   min-height: 450px; }
 
 .page-subheader .text-container {

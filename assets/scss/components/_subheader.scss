@@ -8,7 +8,9 @@
 	}
 
 	.row {
-		min-height: 450px;
+		&.row-min-height {
+			min-height: 450px;
+		}
 	}
 
 	.text-container {
