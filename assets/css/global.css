@@ -7242,7 +7242,7 @@ h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 60px;
   font-weight: 300;
-  line-height: .8; }
+  line-height: 0.8; }
 
 h2 {
   color: #86509f;
@@ -7821,3 +7821,11 @@ main article {
       display: flex;
       position: relative;
       z-index: 2; }
+
+.home-slider .slide {
+  align-items: center;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  min-height: 400px;
+  min-height: 600px; }

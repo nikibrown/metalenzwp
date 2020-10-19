@@ -1,0 +1,13 @@
+.home-slider {
+	.slide {
+		align-items: center;
+		background-size: cover;
+		color: $brand-white;
+		display: flex;
+		min-height: 400px;
+
+		@include media-breakpoint-up(l) {
+			min-height: 600px;
+		}
+	}
+}
