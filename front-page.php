@@ -18,42 +18,28 @@ get_header();
 	
 	<main>
 		<section class="home-slider">
-			<div class="slide" style="background-image: url('<?php bloginfo("template_directory")?>/assets/img/masthead.jpg');">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-4">
-							<h1>
-							Transforming optical sensing
-							</h1>
-							<p>
-							Metalenz’s multifunctional optics enables entirely new forms of sensing to be achieved at mobile form factors and price poin
-							</p>
+			<?php if( have_rows('slides') ): ?>
+				<?php while( have_rows('slides') ): the_row(); ?>
+	
+					<div class="slide" style="background-image: url('<?php the_sub_field("slider_background_image"); ?>');">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-4">
+									<h1>
+										<?php the_sub_field("slider_headline"); ?>
+									</h1>
+									<p>
+										<?php the_sub_field("slider_text"); ?>
+									</p>	
 
-							<a href="" class="btn btn-secondary">Learn More <i class="fas fa-angle-right" aria-hidden="true"></i></a>
+									<a href="<?php the_sub_field("slider_cta_button_link"); ?>" class="btn btn-secondary"><?php the_sub_field("slider_cta_button_text"); ?> <i class="fas fa-angle-right" aria-hidden="true"></i></a>
+								</div>
+								<div class="col-lg-8"></div>
+							</div>
 						</div>
-						<div class="col-lg-8"></div>
 					</div>
-				</div>
-			</div>
-
-			<div class="slide" style="background-image: url('<?php bloginfo("template_directory")?>/assets/img/masthead.jpg');">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-4">
-							<h1>
-							Transforming optical sensing
-							</h1>
-							<p>
-							Metalenz’s multifunctional optics enables entirely new forms of sensing to be achieved at mobile form factors and price poin
-							</p>
-
-							<a href="" class="btn btn-secondary">Learn More <i class="fas fa-angle-right" aria-hidden="true"></i></a>
-						</div>
-						<div class="col-lg-8"></div>
-					</div>
-				</div>
-			</div>
-			
+				<?php endwhile; ?>
+			<?php endif; ?>
 		</section>
 
 		<section class="home-cta">
@@ -101,21 +87,18 @@ get_header();
 					</div>
 					<div class="col-lg-6">
 						<ul class="list-unstyled">
+							<?php $args = array(
+								'posts_per_page'         => '3',
+							);
+								// The Query
+								$query = new WP_Query( $args ); ?>
 
-
-						<?php $args = array(
-							'posts_per_page'         => '3',
-						);
-
-							// The Query
-							$query = new WP_Query( $args ); ?>
-
-							<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
-								<li>
-									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-									<span class="date"><?php echo get_the_date( 'F j, Y' ); ?></span>
-									<?php the_excerpt(); ?>
-								</li>
+								<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+									<li>
+										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+										<span class="date"><?php echo get_the_date( 'F j, Y' ); ?></span>
+										<?php the_excerpt(); ?>
+									</li>
 								<?php endwhile; endif; ?>
 							<?php wp_reset_postdata(); ?>
 						</ul>

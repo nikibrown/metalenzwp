@@ -21,7 +21,7 @@ nav a {
 .square {
 	color: white;
 	margin: 15px 0;
-	@include media-breakpoint-up(l) {
+	@include media-breakpoint-up(lg) {
 		min-height: 150px;
 	}
 	@include media-breakpoint-up(xl) {
