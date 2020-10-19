@@ -7,19 +7,3 @@
 		max-width: 1180px !important;
 	}
 }
-
-main.page-sidebar article {
-	position: relative;
-
-	&:before {
-		background-image: url("../img/logo-bg.svg");
-		background-size: 511px 511px;
-		content: "";
-		height: 511px;
-		left: -321px;
-		position: absolute;
-		top: 164px;
-		width: 511px;
-		z-index: 0;
-	}
-}

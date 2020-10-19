@@ -1,17 +1,19 @@
 .bottom-banner-cta {
-    background-color: $brand-gray;
-    color: $brand-white;
-    padding: 55px 0;
+	background-color: $brand-gray;
+	color: $brand-white;
+	padding: 55px 0;
+	position: relative;
+	z-index: 1;
 
-    h2 {
-        color: $brand-white;
-        font-size: 32px;
-        font-weight: 400;
-    }
+	h2 {
+		color: $brand-white;
+		font-size: 32px;
+		font-weight: 400;
+	}
 
-    .btn {
-        @include media-breakpoint-up(lg) {
-            float: right;
-        }
-    }
+	.btn {
+		@include media-breakpoint-up(lg) {
+			float: right;
+		}
+	}
 }
