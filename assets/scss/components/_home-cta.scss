@@ -1,0 +1,79 @@
+.home-cta {
+	background: $brand-dark;
+	color: $brand-white;
+	padding: 70px 0 0 0;
+	text-align: center;
+
+	.intro {
+		color: $brand-white;
+		font-size: 24px;
+
+		&:after {
+			display: none;
+		}
+	}
+
+	.cta {
+		h2 {
+			color: $brand-white;
+			font-size: 24px;
+			font-weight: 300;
+			margin-bottom: 0;
+			padding: 20px 0;
+		}
+	}
+
+	.cta-1 {
+		h2 {
+			background-color: $brand-purple;
+		}
+	}
+
+	.cta-2 {
+		h2 {
+			background-color: $brand-blue;
+		}
+	}
+
+	.cta-3 {
+		h2 {
+			background-color: $brand-pink;
+		}
+	}
+
+	.cta {
+		.photo-container {
+			background-size: cover;
+			padding: 0 45px;
+			position: relative;
+			min-height: 240px;
+
+			.photo-container-content {
+				align-items: center;
+				display: none;
+				flex-direction: column;
+				justify-content: center;
+				min-height: 240px;
+			}
+		}
+
+		&:hover {
+			cursor: pointer;
+
+			.photo-container {
+				&:before {
+					bottom: 0;
+					content: "";
+					left: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+			}
+
+			.photo-container-content {
+				display: flex;
+			}
+		}
+	}
+}

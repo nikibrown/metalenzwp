@@ -7765,3 +7765,48 @@ main article {
           display: block;
           margin: 0 auto;
           max-width: 80%; } }
+
+.home-cta {
+  background: #231f20;
+  color: #fff;
+  padding: 70px 0 0 0;
+  text-align: center; }
+  .home-cta .intro {
+    color: #fff;
+    font-size: 24px; }
+    .home-cta .intro:after {
+      display: none; }
+  .home-cta .cta h2 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding: 20px 0; }
+  .home-cta .cta-1 h2 {
+    background-color: #5b0047; }
+  .home-cta .cta-2 h2 {
+    background-color: #0071bc; }
+  .home-cta .cta-3 h2 {
+    background-color: #ed5791; }
+  .home-cta .cta .photo-container {
+    background-size: cover;
+    padding: 0 45px;
+    position: relative;
+    min-height: 240px; }
+    .home-cta .cta .photo-container .photo-container-content {
+      align-items: center;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 240px; }
+  .home-cta .cta:hover {
+    cursor: pointer; }
+    .home-cta .cta:hover .photo-container:before {
+      bottom: 0;
+      content: "";
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0; }
+    .home-cta .cta:hover .photo-container-content {
+      display: flex; }

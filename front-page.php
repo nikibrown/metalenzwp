@@ -32,35 +32,32 @@ get_header();
 				<div class="row">
 					<div class="col-12">
 						<p class="intro">
-						Metalenz is commercializing a revolutionary flat optical technology and transforming optical sensing in consumer electronics and automotive markets. Built on a foundational innovation in meta-optics from Harvard University, Metalenz’s technology enables significant reduction in the complexity and size of optical modules while improving system performance. 
+							<?php the_field("home_cta_intro_text"); ?>
 						</p>
 					</div>
 				</div>
 				<div class="row no-gutters">
-					<div class="col-lg-4">
-						<h2>Mobile Devices</h2>
-						<div class="photo-container">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, laboriosam sit laudantium quo beatae ratione! Rerum hic voluptas consequuntur ducimus commodi culpa.</p>
+					<?php $counter = 1; ?>
+					<?php if( have_rows('home_cta') ): ?>
+						<?php while( have_rows('home_cta') ): the_row(); ?>
+							
 
-							<i class="fas fa-angle-right"></i>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<h2>AR/VR</h2>
-						<div class="photo-container">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, laboriosam sit laudantium quo beatae ratione! Rerum hic voluptas consequuntur ducimus commodi culpa.</p>
+							<div class="col-lg-4">
+								<div class="cta cta-<?php echo $counter ?>">
+									<h2><?php the_sub_field("cta_headline"); ?></h2>
+									<div class="photo-container" style="background-image: url('<?php bloginfo("template_directory")?>/assets/img/subheader.jpg');">
+										<div class="photo-container-content">
+											<p><a href="<?php the_field("cta_link"); ?>"><?php the_sub_field("cta_text"); ?></a></p>
 
-							<i class="fas fa-angle-right"></i>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<h2>Automotive</h2>
-						<div class="photo-container">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, laboriosam sit laudantium quo beatae ratione! Rerum hic voluptas consequuntur ducimus commodi culpa.</p>
+											<i class="fas fa-angle-right fa-2x"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<?php $counter++; ?>
+						<?php endwhile; ?>
+					<?php endif; ?>
 
-							<i class="fas fa-angle-right"></i>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -69,7 +66,7 @@ get_header();
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
-						<h2>News & Events</h2>
+						<h2><?php the_field("news_events_headline"); ?></h2>
 					</div>
 					<div class="col-lg-6">
 						<ul class="list-unstyled">
@@ -94,7 +91,7 @@ get_header();
 						
 					</div>
 					<div class="col-lg-3">
-						<a href="" class="btn btn-secondary">See All <i class="fas fa-angle-right"></i></a>
+						<a href="<?php the_field("news_events_cta_button_link"); ?>" class="btn btn-secondary"><?php the_field("news_events_cta_button_text"); ?> <i class="fas fa-angle-right"></i></a>
 					</div>
 				</div>
 			</div>
