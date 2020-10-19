@@ -4,7 +4,7 @@ const $dropdownMenu = $(".sub-menu");
 const showClass = "show";
 
 $(window).on("load resize", function() {
-    if (this.matchMedia("(min-width: 992px)").matches) {
+  if (this.matchMedia("(min-width: 992px)").matches) {
     $dropdown.hover(
       function() {
         const $this = $(this);
@@ -23,5 +23,10 @@ $(window).on("load resize", function() {
     $dropdown.off("mouseenter mouseleave");
   }
 
-  
+  if (this.matchMedia("(max-width: 992px)").matches) {
+
+  }
+
 });
+
+

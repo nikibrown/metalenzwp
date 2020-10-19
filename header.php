@@ -64,41 +64,11 @@
 					'menu' => 'Main Nav',
 					'container'       => '',
 					'fallback_cb'     => 'wp_page_menu',
-					'items_wrap'      => '<ul class="navbar-nav mr-auto">%3$s</ul>',
-					'depth'           => 2				
+					'items_wrap'      => '<ul class="navbar-nav mr-auto">%3$s</ul>'				
 				);
 				?>
 
 				<?php wp_nav_menu( $defaults ); ?>
-
-					
-				  <!-- <ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-					  <a class="nav-link" href="#">About Us</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#">Technology</a>
-					</li>
-					<li class="nav-item dropdown">
-					  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Products
-					  </a>
-					  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Pattern Generator</a>
-						<a class="dropdown-item" href="#">Imaging Lens</a>
-						<a class="dropdown-item" href="#">Diffuser</a>
-					  </div>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#">Markets & Applications</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">News & Events</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link" href="#">Publications</a>
-					  </li>
-				  </ul> -->
 				</div>
 			  </nav>
 		</div>
