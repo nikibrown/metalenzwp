@@ -23,9 +23,16 @@ $(window).on("load resize", function() {
     $dropdown.off("mouseenter mouseleave");
   }
 
-  if (this.matchMedia("(max-width: 992px)").matches) {
+});
 
-  }
+
+$(document).ready(function() {
+
+  // init slider
+  $(".home-slider").slick({
+    dots: true,
+    arrows: false
+  });
 
 });
 

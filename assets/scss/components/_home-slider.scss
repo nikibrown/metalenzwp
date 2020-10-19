@@ -1,4 +1,6 @@
 .home-slider {
+	position: relative;
+
 	.slide {
 		align-items: center;
 		background-size: cover;
@@ -6,8 +8,54 @@
 		display: flex;
 		min-height: 400px;
 
+		&:focus {
+			outline: none;
+		}
+
 		@include media-breakpoint-up(l) {
 			min-height: 600px;
 		}
 	}
+
+	.slick-dots {
+		// extend container to constrain slick dots
+		@extend .container;
+		bottom: 50px;
+		left: 50%;
+		position: absolute;
+		text-align: left;
+		transform: translateX(-50%);
+
+		li {
+			button {
+				&:before {
+					font-size: 11px;
+					-webkit-text-fill-color: transparent;
+					-webkit-text-stroke-width: 1px;
+					-webkit-text-stroke-color: $brand-white;
+					opacity: 1;
+				}
+				&:hover {
+					&:before {
+						color: $brand-white;
+						-webkit-text-fill-color: $brand-white;
+					}
+				}
+			}
+
+			&.slick-active {
+				button {
+					&:before {
+						color: $brand-white;
+						-webkit-text-fill-color: $brand-white;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Override Slick theme.css
+.slick-dotted.slick-slider {
+	margin-bottom: 0;
 }

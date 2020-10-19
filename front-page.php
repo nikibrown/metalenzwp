@@ -35,6 +35,24 @@ get_header();
 					</div>
 				</div>
 			</div>
+
+			<div class="slide" style="background-image: url('<?php bloginfo("template_directory")?>/assets/img/masthead.jpg');">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<h1>
+							Transforming optical sensing
+							</h1>
+							<p>
+							Metalenz’s multifunctional optics enables entirely new forms of sensing to be achieved at mobile form factors and price poin
+							</p>
+
+							<a href="" class="btn btn-secondary">Learn More <i class="fas fa-angle-right" aria-hidden="true"></i></a>
+						</div>
+						<div class="col-lg-8"></div>
+					</div>
+				</div>
+			</div>
 			
 		</section>
 
