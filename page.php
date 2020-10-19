@@ -16,16 +16,7 @@ get_header();
 ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<section class="page-header-img" style="background-image: url('<?php the_field("page_header_image"); ?>);">
-		<div class="container">
-			<div class="row align-items-end">
-				<div class="col-lg-12">
-					<h1><?php the_title(); ?></h1>
-				</div>	
-			</div>
-			
-		</div>
-	</section>
+	<?php get_template_part( 'template-parts/content', 'page-header' ); ?>
 	
 	<main class="page-sidebar">
 		<div class="container">
