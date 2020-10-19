@@ -14,7 +14,7 @@
 get_header();
 ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
 	
 	<main>
 		<section class="home-slider">
@@ -73,22 +73,23 @@ get_header();
 					</div>
 					<div class="col-lg-6">
 						<ul class="list-unstyled">
-							<li>
-								
-								<h3><a href="">News Item Title Lorem Ipsum Dolor Sit Amet</a></h3>
-								<span class="date">August 11, 2020</span>
-								<p>Lorem ipsum dolor sit amet lo lorem. Sit amet do sitlorem lorem lorem lorem!</p>
-							</li>
-							<li>
-								<h3><a href="">Event Item Title Lorem Ipsum Dolor Sit Amet</a></h3>
-								<span class="date">August 11, 2020</span>
-								<p>Lorem ipsum dolor sit amet lo lorem. Sit amet do sitlorem lorem lorem lorem!</p>
-							</li>
-							<li>
-								<h3><a href="">News Item Title Lorem Ipsum Dolor Sit Amet</a></h3>
-								<span class="date">August 11, 2020</span>
-								<p>Lorem ipsum dolor sit amet lo lorem. Sit amet do sitlorem lorem lorem lorem!</p>
-							</li>
+
+
+						<?php $args = array(
+							'posts_per_page'         => '3',
+						);
+
+							// The Query
+							$query = new WP_Query( $args ); ?>
+
+							<?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+								<li>
+									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+									<span class="date"><?php echo get_the_date( 'F j, Y' ); ?></span>
+									<?php the_excerpt(); ?>
+								</li>
+								<?php endwhile; endif; ?>
+							<?php wp_reset_postdata(); ?>
 						</ul>
 						
 					</div>
@@ -103,6 +104,6 @@ get_header();
 			
 
 
-<?php endwhile; endif; ?>
+
 
 <?php get_footer(); ?>
