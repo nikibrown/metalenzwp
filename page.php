@@ -1,4 +1,4 @@
-<?php
+<?php /* Template Name: Page With Sidebar
 /**
  * The template for displaying all pages
  *
@@ -26,10 +26,8 @@ get_header();
 			
 		</div>
 	</section>
-
 	
-
-	<main>
+	<main class="page-sidebar">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -72,21 +70,23 @@ get_header();
 		</div>
 	</main>
 
-	<?php if( get_field('bottom_banner_cta_headline') ): ?>
-		<section class="bottom-banner-cta">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-9">
-						<h2><?php the_field("bottom_banner_cta_headline"); ?></h2>
-						<?php the_field("bottom_banner_cta_text"); ?>
-					</div>
-					<div class="col-lg-3">
-						<a href="<?php the_field("bottom_banner_cta_button_link"); ?>" class="btn btn-primary"><?php the_field("bottom_banner_cta_button_text"); ?> <i class="fas fa-angle-right"></i>
-							</a>
+	<?php if( have_rows('bottom_banner_cta') ): ?>
+		<?php while( have_rows('bottom_banner_cta') ): the_row(); ?>
+			<section class="bottom-banner-cta">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-9">
+							<h2><?php the_sub_field("bottom_banner_cta_headline"); ?></h2>
+							<?php the_sub_field("bottom_banner_cta_text"); ?>
+						</div>
+						<div class="col-lg-3">
+							<a href="<?php the_sub_field("bottom_banner_cta_button_link"); ?>" class="btn btn-primary"><?php the_sub_field("bottom_banner_cta_button_text"); ?> <i class="fas fa-angle-right"></i>
+								</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		<?php endwhile; ?>
 	<?php endif; ?>
 
 

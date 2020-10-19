@@ -7209,9 +7209,9 @@ a.text-dark:hover, a.text-dark:focus {
   .container-xl {
     max-width: 1180px !important; } }
 
-main article {
+main.page-sidebar article {
   position: relative; }
-  main article:before {
+  main.page-sidebar article:before {
     background-image: url("../img/logo-bg.svg");
     background-size: 511px 511px;
     content: "";
@@ -7483,16 +7483,24 @@ footer {
   footer .copyright {
     margin-top: 60px; }
 
-main {
+main.page-no-sidebar {
+  background-color: #fff; }
+
+main.page-sidebar {
   background: #ED5791;
   background: linear-gradient(180deg, #86509F 0%, #ED5791 100%); }
-  main aside {
-    background-color: #fff;
-    min-height: 235px;
-    padding: 25px; }
-  main article {
-    background-color: #fff;
-    padding: 50px 50px 125px 50px; }
+
+main aside {
+  background-color: #fff;
+  min-height: 235px;
+  padding: 25px; }
+
+main article {
+  background-color: #fff;
+  padding: 50px 50px 75px 50px; }
+  @media (min-width: 992px) {
+    main article {
+      padding: 50px 50px 125px 50px; } }
 
 .breadcrumb {
   background: none;
@@ -7683,7 +7691,7 @@ main {
   padding: 30px 0 15px; }
   @media (min-width: 992px) {
     .related-cta .related-cta-top {
-      padding: 100px 0 15px; } }
+      padding: 15px 0 15px; } }
 
 .related-cta .related-cta-middle {
   background-color: #5B0047; }

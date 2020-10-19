@@ -1,6 +1,12 @@
 main {
-	background: $brand-pink;
-	background: $brand-gradient-pink;
+	&.page-no-sidebar {
+		background-color: $brand-white;
+	}
+
+	&.page-sidebar {
+		background: $brand-pink;
+		background: $brand-gradient-pink;
+	}
 
 	aside {
 		background-color: $brand-white;
@@ -10,6 +16,10 @@ main {
 
 	article {
 		background-color: $brand-white;
-		padding: 50px 50px 125px 50px;
+		padding: 50px 50px 75px 50px;
+
+		@include media-breakpoint-up(lg) {
+			padding: 50px 50px 125px 50px;
+		}
 	}
 }
