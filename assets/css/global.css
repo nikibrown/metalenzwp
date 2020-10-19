@@ -7452,7 +7452,7 @@ footer {
   footer a {
     color: #fff; }
     footer a:hover {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.6);
       text-decoration: none; }
   @media (min-width: 992px) {
     footer .social-nav {
@@ -7771,6 +7771,10 @@ main article {
   color: #fff;
   padding: 70px 0 0 0;
   text-align: center; }
+  .home-cta a {
+    color: #fff; }
+    .home-cta a:hover {
+      color: #fff; }
   .home-cta .intro {
     color: #fff;
     font-size: 24px; }
@@ -7795,18 +7799,25 @@ main article {
     min-height: 240px; }
     .home-cta .cta .photo-container .photo-container-content {
       align-items: center;
-      display: none;
+      display: flex;
       flex-direction: column;
       justify-content: center;
       min-height: 240px; }
+      @media (min-width: 992px) {
+        .home-cta .cta .photo-container .photo-container-content {
+          display: none; } }
   .home-cta .cta:hover {
     cursor: pointer; }
     .home-cta .cta:hover .photo-container:before {
+      background-color: rgba(0, 0, 0, 0.6);
       bottom: 0;
       content: "";
       left: 0;
       position: absolute;
       right: 0;
-      top: 0; }
+      top: 0;
+      z-index: 1; }
     .home-cta .cta:hover .photo-container-content {
-      display: flex; }
+      display: flex;
+      position: relative;
+      z-index: 2; }

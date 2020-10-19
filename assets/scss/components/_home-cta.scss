@@ -4,6 +4,13 @@
 	padding: 70px 0 0 0;
 	text-align: center;
 
+	a {
+		color: $brand-white;
+		&:hover {
+			color: $brand-white;
+		}
+	}
+
 	.intro {
 		color: $brand-white;
 		font-size: 24px;
@@ -50,7 +57,10 @@
 
 			.photo-container-content {
 				align-items: center;
-				display: none;
+				display: flex;
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
 				flex-direction: column;
 				justify-content: center;
 				min-height: 240px;
@@ -62,17 +72,21 @@
 
 			.photo-container {
 				&:before {
+					background-color: rgba(0, 0, 0, 0.6);
 					bottom: 0;
 					content: "";
 					left: 0;
 					position: absolute;
 					right: 0;
 					top: 0;
+					z-index: 1;
 				}
 			}
 
 			.photo-container-content {
 				display: flex;
+				position: relative;
+				z-index: 2;
 			}
 		}
 	}

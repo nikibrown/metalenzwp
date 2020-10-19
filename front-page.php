@@ -40,19 +40,21 @@ get_header();
 					<?php $counter = 1; ?>
 					<?php if( have_rows('home_cta') ): ?>
 						<?php while( have_rows('home_cta') ): the_row(); ?>
-							
-
 							<div class="col-lg-4">
-								<div class="cta cta-<?php echo $counter ?>">
+								<a href="<?php the_sub_field("cta_link"); ?>" class="cta cta-<?php echo $counter ?>">
 									<h2><?php the_sub_field("cta_headline"); ?></h2>
-									<div class="photo-container" style="background-image: url('<?php bloginfo("template_directory")?>/assets/img/subheader.jpg');">
+									<?php if( get_sub_field('cta_image') ) { ?>
+										<div class="photo-container" style="background-image: url('<?php the_sub_field("cta_image"); ?>');">
+									<?php } else { ?>
+										<div class="photo-container" style="background-image: url('<?php bloginfo("template_directory")?>/assets/img/subheader.jpg');">
+									<?php } ?>
 										<div class="photo-container-content">
-											<p><a href="<?php the_field("cta_link"); ?>"><?php the_sub_field("cta_text"); ?></a></p>
+											<p><?php the_sub_field("cta_text"); ?></p>
 
 											<i class="fas fa-angle-right fa-2x"></i>
 										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 							<?php $counter++; ?>
 						<?php endwhile; ?>
