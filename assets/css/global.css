@@ -7343,12 +7343,10 @@ nav.navbar {
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     font-weight: 700; }
-  nav.navbar ul.navbar-nav li:first-child a.nav-link, nav.navbar ul.navbar-nav li:first-child a {
-    padding-left: 0; }
-  nav.navbar li {
+  nav.navbar li.menu-item-has-children {
     margin-right: 25px; }
     @media (min-width: 1200px) {
-      nav.navbar li {
+      nav.navbar li.menu-item-has-children {
         margin-right: 45px; } }
 
 @media (min-width: 992px) {
@@ -7406,17 +7404,17 @@ nav.navbar {
         width: 0;
         z-index: 9999; } }
   @media (min-width: 992px) {
-    .navbar .dropdown-menu a, .navbar .sub-menu a, .navbar
+    .menu-item-has-children .dropdown-menu a, .menu-item-has-children .sub-menu a, .menu-item-has-children
     .sub-menu a {
-      border-top: 1px solid #fff;
+      border-top: 1px solid #fff !important;
       color: #0071bc;
       font-family: "Open Sans", sans-serif;
       font-weight: 400;
-      padding: 8px 15px; }
-      .navbar .dropdown-menu a:first-child, .navbar .sub-menu a:first-child, .navbar
+      padding: 8px 15px !important; }
+      .menu-item-has-children .dropdown-menu a:first-child, .menu-item-has-children .sub-menu a:first-child, .menu-item-has-children
       .sub-menu a:first-child {
-        border-top: none; }
-      .navbar .dropdown-menu a:hover, .navbar .sub-menu a:hover, .navbar
+        border-top: 1px solid #f0f0f0; }
+      .menu-item-has-children .dropdown-menu a:hover, .menu-item-has-children .sub-menu a:hover, .menu-item-has-children
       .sub-menu a:hover {
         color: #003456; } }
   .dropdown-menu a:hover, .sub-menu a:hover,
