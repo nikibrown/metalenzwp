@@ -1,36 +1,40 @@
 .page-subheader {
+	&.page-subheader-pink {
+		background: $brand-gradient-pink;
+	}
 
-    background: $brand-gradient-pink;
+	&.page-subheader-blue {
+		background: $brand-gradient-blue;
+	}
 
-    .row {
-        min-height: 450px;
-    }
+	.row {
+		min-height: 450px;
+	}
 
-    .text-container {
-        align-items: center;
-        display: flex;
-       
-        @include media-breakpoint-up(lg) {
-            min-height: 300px;
-        }
-    }
+	.text-container {
+		align-items: center;
+		display: flex;
 
-    h2 {
-        color: $brand-white;
-        font-family: $montserrat;
-        font-size: 30px;
-        font-weight: 300;
-        margin-bottom: 30px;
-        
-        @include media-breakpoint-up(lg) {
-            margin-bottom: 0;
-        }
-    }
+		@include media-breakpoint-up(lg) {
+			min-height: 300px;
+		}
+	}
 
-    .page-subheader-img {
-        background-size: cover;
-        background-position: top center;
-        min-height: 450px;
-    }
-    
+	h2 {
+		color: $brand-white;
+		font-family: $montserrat;
+		font-size: 30px;
+		font-weight: 300;
+		margin-bottom: 30px;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+		}
+	}
+
+	.page-subheader-img {
+		background-size: cover;
+		background-position: top center;
+		min-height: 450px;
+	}
 }

@@ -10,8 +10,15 @@
 ?>
 
 <?php if( get_field('page_intro') ): ?>
+	<!-- page-subheader-blue -->
 
-	<section class="page-subheader pabe-subheader-pink">
+	<section class="page-subheader 
+		<?php if( get_field('page_subheader_gradient_color') == 'pink' ) { ?>
+			page-subheader-pink
+		<?php } else { ?>
+			page-subheader-blue
+		<?php } ?>
+	">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
