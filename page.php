@@ -55,6 +55,33 @@ get_header();
 						<?php endif; ?>
 
 						<?php the_content(); ?>
+						<?php $counter = 1; ?>
+						<?php if( have_rows('team_bio') ): ?>
+							<ul class="accordion-large list-unstyled">
+								<?php while( have_rows('team_bio') ): the_row(); ?>
+									<li>
+										<div class="accordion-button" data-toggle="collapse" data-target="#bio<?php echo $counter; ?>" aria-expanded="false" aria-controls="collapseExample">
+											<div class="row">
+												<div class="col-lg-6">
+													<div class="photo" style="background-image: url('<?php the_sub_field("bio_photo"); ?>');"></div>
+												</div>
+												<div class="col-lg-6">
+													<div class="accordion-title">
+														<h2><?php the_sub_field("bio_name"); ?></h2>
+														<p><?php the_sub_field("bio_title"); ?></p>
+														<i class="fas fa-angle-right"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="accordion-content collapse" id="bio<?php echo $counter; ?>">
+										<?php the_sub_field("bio_text"); ?>
+										</div>
+									</li>
+								<?php $counter++; ?>
+								<?php endwhile; ?>	
+							</ul>	
+						<?php endif; ?>
 					</article>
 				</div>
 			</div>
