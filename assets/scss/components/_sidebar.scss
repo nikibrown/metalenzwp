@@ -1,5 +1,9 @@
 .sidebar-nav {
-	ul {
+
+	.sub-menu {
+		@extend .list-unstyled;
+		margin-bottom: 10px;
+
 		li {
 			border-bottom: 1px dashed $brand-light-gray2;
 			a {
@@ -7,7 +11,8 @@
 				font-weight: 700;
 				padding: 10px 0;
 			}
-			&.current_page_item {
+			&.current_page_item,
+			&.current-page-parent  {
 				a {
 					color: $brand-light-purple;
 					&:hover {
@@ -16,22 +21,18 @@
 				}
 			}
 
-			ul.sub-menu,
-			.children {
-				@extend .list-unstyled;
-				margin-bottom: 10px;
-				li {
+			li {
+				border-bottom: none;
+				padding-left: 10px;
+				a {
 					border-bottom: none;
-					padding-left: 10px;
-					a {
-						border-bottom: none;
-						color: $brand-dark-gray;
-						font-style: italic;
-						font-weight: 500;
-						padding: 7px 0;
-					}
+					color: $brand-dark-gray!important;
+					font-style: italic;
+					font-weight: 500;
+					padding: 7px 0;
 				}
 			}
 		}
+		
 	}
 }

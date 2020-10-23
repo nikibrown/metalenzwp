@@ -31,8 +31,8 @@ get_header();
 
 			<div class="row no-gutters">
 				<div class="col-lg-3 d-none d-lg-block">
-					<aside class="sidebar-nav">
-						<nav>
+					<aside>
+						
 							<?php 
 								global $post;
 								$parents = get_post_ancestors( $post->ID );
@@ -42,32 +42,57 @@ get_header();
 									'menu' => 'Main Nav',
 									'container'       => '',
 									'fallback_cb'     => 'wp_page_menu',
-									'items_wrap'      => '<ul class="list-unstyled">%3$s</ul>',
+									'items_wrap'      => '<ul class="list-unstyled sidebar-nav">%3$s</ul>',
 									'depth'           => 0
 								);
 
 								wp_nav_menu( $defaults );
 							?>
 
-							
 						<style>
+							/* Hide all sidebar nav items that arent the current page ancestor */
+													
 							.page-ancestor-<?php echo $id; ?> aside li:not(.page-item-<?php echo $id; ?>) {
 								display: none;
 							}
+							
+							/* Change visibility of top level nav items (display none hides children) */
+
+							.page-ancestor-<?php echo $id; ?> aside ul li.top-level {
+								visibility: hidden;
+							}
+
+							/* Hide top level anchor link to remove space */
+
+							.page-ancestor-<?php echo $id; ?> aside ul li.top-level > a {
+								display: none;
+							}
+
+							/* Show child nav items of current page ancestor */
 
 							.page-ancestor-<?php echo $id; ?> aside li.current_page_ancestor,
 							.page-ancestor-<?php echo $id; ?> aside li.current_page_ancestor li{
 								display: block;
+								visibility: visible;
 							}
 						
 							.page-ancestor-<?php echo $id; ?> aside li.page-item-<?php echo $id; ?> li { 
 								display: block;
+								visibility: visible;
+							}		
+							
+							/* Only show third level nav items when on parent page */
+
+							.page-ancestor-<?php echo $id; ?> aside .sub-menu .sub-menu {
+								display: none;
 							}
 
-						
+							.page-ancestor-<?php echo $id; ?> aside .sub-menu .current-menu-item .sub-menu,
+							.page-ancestor-<?php echo $id; ?> aside .sub-menu .current-menu-ancestor .sub-menu {
+								display: block;
+							}
 						</style>
 
-						</nav>
 						
 					</aside>
 				</div>
