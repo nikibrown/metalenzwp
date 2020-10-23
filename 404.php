@@ -10,51 +10,47 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'mwp' ); ?></h1>
-			</header><!-- .page-header -->
+	<?php if( get_field('page_header_image') ) { ?>
+		<section class="page-header-img" style="background-image: url('<?php the_field("page_header_image"); ?>);">
+	<?php } else { ?>
+		<section class="page-header-img" style="background-image: url('<?php bloginfo("template_directory")?>/assets/img/masthead.jpg);">
+	<?php } ?>
+		<div class="container">
+			<div class="row align-items-end">
+				<div class="col-lg-12">
+					<h1>
+						<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'mwp' ); ?>
+					</h1>
+				</div>	
+			</div>
+			
+		</div>
+	</section>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mwp' ); ?></p>
 
-					<?php
-					get_search_form();
+	<main class="page-sidebar">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<nav aria-label="breadcrumb">
+						<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+					</nav>
+				</div>
+			</div>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+			<div class="row">
+				<div class="col-12">
+					<article>
+							<p class="intro">
+								The page you are looking for can not be found. You can try searching or return to the <a href="<?php bloginfo("url"); ?>">homepage</a>.
+							</p>
+						
+					</article>
+					
+				</div>
+			</div>
+		</div>
+	</main>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'mwp' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$mwp_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'mwp' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$mwp_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
-
-<?php
-get_footer();
+<?php get_footer(); ?>
