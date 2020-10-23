@@ -7448,7 +7448,8 @@ nav.navbar {
 footer {
   background-color: #231f20;
   color: #fff;
-  padding: 30px 0 50px 0; }
+  padding: 30px 0 50px 0;
+  position: relative; }
   footer a {
     color: #fff; }
     footer a:hover {
@@ -7498,17 +7499,17 @@ main article {
   position: relative; }
   @media (min-width: 992px) {
     main article {
-      padding: 50px 50px 125px 50px; } }
-  .page-template-page main article:before {
-    background-image: url("../img/logo-bg.svg");
-    background-size: 511px 511px;
-    content: "";
-    height: 511px;
-    left: -321px;
-    position: absolute;
-    top: 164px;
-    width: 511px;
-    z-index: 0; }
+      padding: 50px 50px 125px 50px; }
+      .page-template-page main article:before {
+        background-image: url("../img/logo-bg.svg");
+        background-size: 511px 511px;
+        content: "";
+        height: 511px;
+        left: -321px;
+        position: absolute;
+        top: 164px;
+        width: 511px;
+        z-index: 0; } }
 
 .breadcrumb {
   background: none;
