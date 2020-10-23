@@ -10,44 +10,63 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'mwp' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+<?php if( get_field('page_header_image') ) { ?>
+	<section class="page-header-img" style="background-image: url('<?php the_field("page_header_image"); ?>);">
+<?php } else { ?>
+	<section class="page-header-img" style="background-image: url('<?php bloginfo("template_directory")?>/assets/img/masthead.jpg);">
+<?php } ?>
+	<div class="container">
+		<div class="row align-items-end">
+			<div class="col-lg-12">
+				<h1><?php
+				/* translators: %s: search query. */
+				printf( esc_html__( 'Search Results for: %s', 'mwp' ), '<span><strong>' . get_search_query() . '</strong></span>' );
+				?></h1>
+			</div>	
+		</div>
+		
+	</div>
+</section>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+<main class="page-sidebar">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<nav aria-label="breadcrumb">
+					<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+				</nav>
+			</div>
+		</div>
 
-			endwhile;
+		<div class="row">
+			<div class="col-12">
+				<article>
+					
+					<ul>
+						<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+							<li>
+								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<span class="date"><?php echo get_the_date( 'F j, Y' ); ?></span>
+								<?php the_excerpt(); ?>
+							</li>
+						<?php endwhile; ?>
 
-			the_posts_navigation();
+						<?php else : ?>
+							<p class="intro">
+								<?php printf( esc_html__( 'No Results for: %s', 'mwp' ), '<span><strong>' . get_search_query() . '</strong></span>' );?>
+							</p>
+						
+						
+						<?php endif; ?>
+					</ul>
+				</article>
+				
+			</div>
+		</div>
+	</div>
+</main>
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

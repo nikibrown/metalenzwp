@@ -244,7 +244,7 @@ function dimox_breadcrumbs() {
 	/* === OPTIONS === */
 	$text['home']     = 'Home'; // text for the 'Home' link
 	$text['category'] = 'Archive by Category "%s"'; // text for a category page
-	$text['search']   = 'Search Results for "%s" Query'; // text for a search results page
+	$text['search']   = 'Search Results for "%s"'; // text for a search results page
 	$text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
 	$text['author']   = 'Articles Posted by %s'; // text for an author page
 	$text['404']      = 'Error 404'; // text for the 404 page
