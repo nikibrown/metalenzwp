@@ -15,17 +15,10 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-3">
-						<p>Metalenz, Inc.<br />
-							<?php //the_field('footer_address', 'option'); ?>
-							<?php the_field('footer_column_1', 'option'); ?>
-
-						</p>
+						<?php the_field('footer_column_1', 'option'); ?>
 					</div>
 					<div class="col-lg-3">
 						<?php the_field('footer_column_2', 'option'); ?>
-						<!--<p><a href="tel://<?php the_field('footer_phone', 'option'); ?>"><?php the_field('footer_phone', 'option'); ?></a><br />
-							<a href="mailto:<?php the_field('footer_email', 'option'); ?>"><?php the_field('footer_email', 'option'); ?></a>
-						</p>-->
 					</div>
 					<div class="col-lg-6">
 						<?php if( have_rows('footer_social_links', 'option') ): ?>
@@ -42,7 +35,6 @@
 					</div>
 					<div class="col-lg-12">
 						<div class="copyright">
-							<?php //the_field("footer_copyright_text", 'option'); ?>
 							<?php the_field('footer_column_4', 'option'); ?>
 						</div>
 					</div>
