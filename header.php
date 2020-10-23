@@ -37,7 +37,18 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php 
+	global $post;
+	$parents = get_post_ancestors( $post->ID );
+	$id = ($parents) ? $parents[count($parents)-1]: $post->ID;
+	$page_ancestor = "page-ancestor-" . $id;
+
+?>
+
+								
+
+<body <?php body_class($page_ancestor ); ?>>
+
 <?php wp_body_open(); ?>
 
 

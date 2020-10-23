@@ -7,8 +7,7 @@
 				font-weight: 700;
 				padding: 10px 0;
 			}
-			&.has-sub-menu,
-			&.page_item_has_children {
+			&.current_page_item {
 				a {
 					color: $brand-light-purple;
 					&:hover {

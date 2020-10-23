@@ -15,6 +15,7 @@
 get_header();
 ?>
 
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<?php get_template_part( 'template-parts/content', 'page-header' ); ?>
 	
@@ -32,18 +33,40 @@ get_header();
 				<div class="col-lg-3 d-none d-lg-block">
 					<aside class="sidebar-nav">
 						<nav>
-						<?php
-							global $post;
-							$parents = get_post_ancestors( $post->ID );
-							/* Get the ID of the 'top most' Page if not return current page ID */
-							$id = ($parents) ? $parents[count($parents)-1]: $post->ID;
+							<?php 
+								global $post;
+								$parents = get_post_ancestors( $post->ID );
+								$id = ($parents) ? $parents[count($parents)-1]: $post->ID;
 
-							$childPages = wp_list_pages( 'title_li=&child_of='.$id.'&echo=0' );
-							if ( $childPages) : ?>
-								<ul class="list-unstyled">
-									<?php echo $childPages; ?>
-								</ul>
-							<?php endif; ?>
+								$defaults = array(
+									'menu' => 'Main Nav',
+									'container'       => '',
+									'fallback_cb'     => 'wp_page_menu',
+									'items_wrap'      => '<ul class="list-unstyled">%3$s</ul>',
+									'depth'           => 0
+								);
+
+								wp_nav_menu( $defaults );
+							?>
+
+							
+						<style>
+							.page-ancestor-<?php echo $id; ?> aside li:not(.page-item-<?php echo $id; ?>) {
+								display: none;
+							}
+
+							.page-ancestor-<?php echo $id; ?> aside li.current_page_ancestor,
+							.page-ancestor-<?php echo $id; ?> aside li.current_page_ancestor li{
+								display: block;
+							}
+						
+							.page-ancestor-<?php echo $id; ?> aside li.page-item-<?php echo $id; ?> li { 
+								display: block;
+							}
+
+						
+						</style>
+
 						</nav>
 						
 					</aside>
