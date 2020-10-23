@@ -57,10 +57,7 @@
 
 			.photo-container-content {
 				align-items: center;
-				display: flex;
-				@include media-breakpoint-up(lg) {
-					display: none;
-				}
+				display: none;
 				flex-direction: column;
 				justify-content: center;
 				min-height: 240px;
@@ -70,23 +67,26 @@
 		&:hover {
 			cursor: pointer;
 
-			.photo-container {
-				&:before {
-					background-color: rgba(0, 0, 0, 0.6);
-					bottom: 0;
-					content: "";
-					left: 0;
-					position: absolute;
-					right: 0;
-					top: 0;
-					z-index: 1;
-				}
-			}
+			@include media-breakpoint-up(lg) {
 
-			.photo-container-content {
-				display: flex;
-				position: relative;
-				z-index: 2;
+				.photo-container {
+					&:before {
+						background-color: rgba(0, 0, 0, 0.6);
+						bottom: 0;
+						content: "";
+						left: 0;
+						position: absolute;
+						right: 0;
+						top: 0;
+						z-index: 1;
+					}
+				}
+
+				.photo-container-content {
+					display: flex;
+					position: relative;
+					z-index: 2;
+				}
 			}
 		}
 	}
