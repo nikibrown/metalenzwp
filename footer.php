@@ -38,8 +38,7 @@
 						<?php endif; ?>
 					</div>
 					<div class="col-lg-12">
-						<p class="copyright">Copyright © 2020 Metalenz, Inc. All Rights Reserved.  |  
-							<a href="">Privacy Policy</a></p>
+						<p class="copyright"><?php the_field("footer_copyright_text", 'option'); ?></p>
 					</div>
 				</div>
 			</div>
