@@ -26,6 +26,8 @@ get_header();
 				<div class="col-lg-12">
 					<article>
 						<?php the_content(); ?>
+
+						<?php get_template_part( 'template-parts/content', 'accordion' ); ?>	
 					</article>
 				</div>
 			</div>

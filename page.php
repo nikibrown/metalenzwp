@@ -55,6 +55,7 @@ get_header();
 						<?php endif; ?>
 
 						<?php the_content(); ?>
+						
 						<?php $counter = 1; ?>
 						<?php if( have_rows('team_bio') ): ?>
 							<ul class="accordion-large list-unstyled">
@@ -82,6 +83,9 @@ get_header();
 								<?php endwhile; ?>	
 							</ul>	
 						<?php endif; ?>
+
+
+						<?php get_template_part( 'template-parts/content', 'accordion' ); ?>	
 					</article>
 				</div>
 			</div>
