@@ -1,6 +1,6 @@
-const $dropdown = $(".menu-item-has-children");
-const $dropdownToggle = $(".dropdown-toggle");
-const $dropdownMenu = $(".sub-menu");
+const $dropdown = $(".navbar .menu-item-has-children");
+const $dropdownToggle = $(".navbar .dropdown-toggle");
+const $dropdownMenu = $(".navbar .sub-menu");
 const showClass = "show";
 
 $(window).on("load resize", function() {

@@ -93,7 +93,7 @@ header {
 		max-width: 377px;
 	}
 
-	.navbar {
+	.navbar-nav {
 		padding-left: 0;
 		font-weight: bold;
 
@@ -103,6 +103,7 @@ header {
 			font-family: $montserrat;
 			font-size: 16px;
 			font-weight: 700;
+			padding: 0.5rem 1rem .7rem .5rem;
 		}
 
 		li {
@@ -121,14 +122,7 @@ header {
 	.header-bottom {
 		background: $brand-pink;
 		background: $brand-gradient-pink;
-
-
-
-		
 	}
-
-
-
 
 	.navbar-toggler {
 		color: $brand-white;
@@ -173,6 +167,7 @@ header {
 		padding-left: 20px;
 		padding-top: 0;
 		padding-bottom: 0;
+		top: 92%;
 		@include media-breakpoint-up(lg) {
 			background-color: $brand-light-gray1;
 			border-radius: 0;
@@ -209,20 +204,18 @@ header {
 			padding: 0 !important;
 
 			@include media-breakpoint-up(lg) {
-				.menu-item-has-children & {
-					border-top: 1px solid $brand-white !important;
-					color: $brand-blue;
-					font-family: $opensans;
-					font-size: 16px !important;
-					font-weight: 400 !important;
-					padding: 8px 15px !important;
-					&:first-child {
-						// TODO: Make first dropdown nav link have no top border: Specificity issue. Thanks bootstrap
-						border-top: 1px solid $brand-light-gray1;
-					}
-					&:hover {
-						color: darken($brand-blue, 20%);
-					}
+				border-top: 1px solid $brand-white !important;
+				color: $brand-blue;
+				font-family: $opensans;
+				font-size: 16px !important;
+				font-weight: 400 !important;
+				padding: 8px 15px !important;
+				&:first-child {
+					// TODO: Make first dropdown nav link have no top border: Specificity issue. Thanks bootstrap
+					border-top: 1px solid $brand-light-gray1;
+				}
+				&:hover {
+					color: darken($brand-blue, 20%);
 				}
 			}
 
