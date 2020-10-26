@@ -265,6 +265,7 @@ function dimox_breadcrumbs() {
 
 	global $post;
 	$home_url       = home_url('/');
+	$blog_url       = get_post_type_archive_link( 'post' ); 
 	$link           = '<li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
 	$link          .= '<a class="breadcrumbs__link" href="%1$s" itemprop="item">%2$s</a>';
 	$link          .= '';

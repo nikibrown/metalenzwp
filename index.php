@@ -1,6 +1,6 @@
 <?php 
 /**
- * The template for displaying news & Events
+ * The template for displaying news & Publications
  *
  * This is the template that displays all posts by default.
  * Please note that this is the WordPress construct of pages
@@ -38,7 +38,10 @@ get_header();
 			<div class="row">
 				<div class="col-lg-12">
 					<nav aria-label="breadcrumb">
-						<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a class="breadcrumbs__link" href="<?php echo home_url(); ?>" itemprop="item">Home</a></li>
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">News and Publications</li>						
+						</ol>
 					</nav>
 				</div>
 			</div>

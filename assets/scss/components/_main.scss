@@ -13,13 +13,14 @@ main {
 		min-height: 235px;
 		padding: 25px;
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 	}
 
 	article {
 		background-color: $brand-white;
 		padding: 50px 50px 75px 50px;
 		position: relative;
+		z-index: 1;
 
 		@include media-breakpoint-up(lg) {
 			padding: 50px 50px 125px 50px;
@@ -34,7 +35,7 @@ main {
 					position: absolute;
 					top: 164px;
 					width: 511px;
-					z-index: 0;
+					z-index: -1;
 				}
 			}
 		}

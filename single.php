@@ -34,7 +34,12 @@ get_header();
 			<div class="row">
 				<div class="col-lg-12">
 					<nav aria-label="breadcrumb">
-						<?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+						<?php //if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a class="breadcrumbs__link" href="<?php echo home_url(); ?>" itemprop="item">Home</a></li>
+							<li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a class="breadcrumbs__link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">News and Publications</a></li>
+							<li class="breadcrumb-item"><?php the_title();?></li>						
+						</ol>
 					</nav>
 				</div>
 			</div>
