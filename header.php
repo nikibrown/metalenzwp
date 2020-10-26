@@ -70,7 +70,7 @@
 								<span id="search-label" class="search-label d-inline-block">Search <i class="fas fa-search"></i></span>
 							</form>
 						</li>
-						<li class="list-inline-item"><a href="mailto:<?php the_field('header_contact_email', 'option'); ?>">Contact <i class="fas fa-at"></i></a></li>
+						<li class="list-inline-item"><a href="<?php the_field('header_contact_link', 'option'); ?>">Contact <i class="fas fa-at"></i></a></li>
 					</ul>
 
 					<p class="tagline"><?php the_field('header_tagline', 'option'); ?></p>
