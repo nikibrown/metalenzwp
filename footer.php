@@ -13,7 +13,7 @@
 
 		<footer>
 			<div class="container">
-				<div class="row align-items-center">
+				<div class="row align-items-start">
 					<div class="col-lg-3">
 						<?php the_field('footer_column_1', 'option'); ?>
 					</div>
