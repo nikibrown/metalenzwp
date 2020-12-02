@@ -7247,7 +7247,7 @@ main ul {
 header .header-top {
   background-color: #231f20;
   color: #fff;
-  padding: 60px 0 20px 0; }
+  padding: 40px 0 50px 0; }
   @media (min-width: 992px) {
     header .header-top {
       padding: 25px 0 35px 0; } }
@@ -7257,62 +7257,26 @@ header .header-top {
       color: rgba(255, 255, 255, 0.8);
       text-decoration: none; }
 
-header .sub-nav {
-  margin-top: 20px;
-  text-align: center; }
-  @media (min-width: 992px) {
-    header .sub-nav {
-      margin-top: 0;
-      text-align: right; } }
-  header .sub-nav .list-inline {
-    margin-bottom: 30px; }
-  header .sub-nav .list-inline-item {
-    display: block; }
-    @media (min-width: 992px) {
-      header .sub-nav .list-inline-item {
-        display: inline-block; }
-        header .sub-nav .list-inline-item:not(:last-child) {
-          margin-right: 50px; } }
-
-header .form-inline {
-  flex-flow: column wrap; }
-  @media (min-width: 992px) {
-    header .form-inline {
-      flex-flow: row wrap; } }
-  header .form-inline .form-control.header-top-search {
-    height: 0;
-    outline-offset: 0;
-    outline: 0;
-    margin-bottom: 10px;
-    width: 60vw;
-    visibility: hidden; }
-    @media (min-width: 992px) {
-      header .form-inline .form-control.header-top-search {
-        height: auto;
-        margin-bottom: 0;
-        width: 300px; } }
-    header .form-inline .form-control.header-top-search.show {
-      height: auto;
-      visibility: visible; }
-
-header .search-label:hover {
-  color: rgba(255, 255, 255, 0.8);
-  cursor: pointer; }
-
 header .tagline {
   font-family: "Montserrat", sans-serif;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.2;
   margin-bottom: 0;
+  margin-top: 30px;
   text-align: center; }
   @media (min-width: 992px) {
     header .tagline {
+      font-size: 21px;
+      margin-top: 0;
       text-align: right; } }
 
 header .brand-logo {
   display: block;
   margin: 0 auto;
-  max-width: 377px; }
+  max-width: 300px; }
+  @media (min-width: 992px) {
+    header .brand-logo {
+      max-width: 377px; } }
 
 header .navbar-nav {
   padding-left: 0;
@@ -7419,6 +7383,60 @@ header .sub-menu {
     color: #fff;
     line-height: 1;
     margin-bottom: 45px; }
+
+.sub-nav {
+  margin-top: 20px; }
+  @media (min-width: 992px) {
+    .sub-nav {
+      margin-top: 0;
+      text-align: right; } }
+  footer .sub-nav {
+    display: block; }
+    @media (min-width: 992px) {
+      footer .sub-nav {
+        display: none; } }
+  .sub-nav .list-inline {
+    margin-bottom: 30px; }
+    header .sub-nav .list-inline {
+      display: none; }
+      @media (min-width: 992px) {
+        header .sub-nav .list-inline {
+          display: block; } }
+      header .sub-nav .list-inline .search-label {
+        margin-top: 7px; }
+  .sub-nav .list-inline-item {
+    display: block; }
+    @media (min-width: 992px) {
+      .sub-nav .list-inline-item {
+        display: inline-block; }
+        .sub-nav .list-inline-item:not(:last-child) {
+          margin-right: 50px; } }
+
+.form-inline {
+  align-items: flex-start;
+  flex-flow: column wrap; }
+  @media (min-width: 992px) {
+    .form-inline {
+      flex-flow: row wrap; } }
+  .form-inline .form-control.header-top-search {
+    height: 0;
+    outline-offset: 0;
+    outline: 0;
+    margin-bottom: 10px;
+    width: 60vw;
+    visibility: hidden; }
+    @media (min-width: 992px) {
+      .form-inline .form-control.header-top-search {
+        height: auto;
+        margin-bottom: 0;
+        width: 300px; } }
+    .form-inline .form-control.header-top-search.show {
+      height: auto;
+      visibility: visible; }
+
+.search-label:hover {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer; }
 
 footer {
   background-color: #231f20;

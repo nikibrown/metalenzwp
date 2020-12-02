@@ -3,7 +3,7 @@ header {
 	.header-top {
 		background-color: $brand-dark;
 		color: $brand-white;
-		padding: $base-spacing-unit * 3 0 $base-spacing-unit 0;
+		padding: $base-spacing-unit * 2 0 $base-spacing-unit * 2.5 0;
 
 		@include media-breakpoint-up(lg) {
 			padding: 25px 0 35px 0;
@@ -18,71 +18,16 @@ header {
 		}
 	}
 
-	.sub-nav {
-		margin-top: 20px;
-		text-align: center;
-		@include media-breakpoint-up(lg) {
-			margin-top: 0;
-			text-align: right;
-		}
-
-		.list-inline {
-			margin-bottom: 30px;
-		}
-
-		.list-inline-item {
-			display: block;
-			@include media-breakpoint-up(lg) {
-				display: inline-block;
-				&:not(:last-child) {
-					margin-right: 50px;
-				}
-			}
-		}
-	}
-
-	.form-inline {
-		// changes layout from desktop to mobile (row vs stacked)
-		flex-flow: column wrap;
-		@include media-breakpoint-up(lg) {
-			flex-flow: row wrap;
-		}
-
-		.form-control {
-			&.header-top-search {
-				height: 0;
-				outline-offset: 0;
-				outline: 0;
-				margin-bottom: 10px;
-				width: 60vw;
-				visibility: hidden;
-				@include media-breakpoint-up(lg) {
-					height: auto;
-					margin-bottom: 0;
-					width: 300px;
-				}
-				&.show {
-					height: auto;
-					visibility: visible;
-				}
-			}
-		}
-	}
-
-	.search-label {
-		&:hover {
-			color: rgba(255, 255, 255, 0.8);
-			cursor: pointer;
-		}
-	}
-
 	.tagline {
 		font-family: $montserrat;
-		font-size: 21px;
+		font-size: 18px;
 		line-height: 1.2;
 		margin-bottom: 0;
+		margin-top: 30px;
 		text-align: center;
 		@include media-breakpoint-up(lg) {
+			font-size: 21px;
+			margin-top: 0;
 			text-align: right;
 		}
 	}
@@ -90,7 +35,11 @@ header {
 	.brand-logo {
 		display: block;
 		margin: 0 auto;
-		max-width: 377px;
+		max-width: 300px;
+
+		@include media-breakpoint-up(lg) {
+			max-width: 377px;
+		}
 	}
 
 	.navbar-nav {
