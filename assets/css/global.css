@@ -7247,10 +7247,7 @@ main ul {
 header .header-top {
   background-color: #231f20;
   color: #fff;
-  padding: 40px 0 50px 0; }
-  @media (min-width: 992px) {
-    header .header-top {
-      padding: 25px 0 35px 0; } }
+  padding: 25px 0 35px 0; }
   header .header-top a {
     color: #fff; }
     header .header-top a:hover {
@@ -7262,13 +7259,15 @@ header .tagline {
   font-size: 18px;
   line-height: 1.2;
   margin-bottom: 0;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center; }
   @media (min-width: 992px) {
     header .tagline {
       font-size: 21px;
       margin-top: 0;
       text-align: right; } }
+  header .tagline span {
+    white-space: nowrap; }
 
 header .brand-logo {
   display: block;
